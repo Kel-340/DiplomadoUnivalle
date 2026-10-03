@@ -1,3 +1,24 @@
+:root {
+    --fondo-pagina: #f7fafc;
+    --texto-pagina: #2d3748;
+    --fondo-header: #243429;
+    --fondo-main: #b9c4b2;
+    --titulos-main: #243429;
+    --nombre-main: #5c667c;
+    --fondo-foto: #c9ced6;
+}
+
+body.dark-mode {
+    --fondo-pagina: #101612;
+    --texto-pagina: #e2e8f0;
+    --fondo-header: #17221b;
+    --fondo-main: #3a4a40;
+    --titulos-main: #b9c4b2;
+    --nombre-main: #cbd5e0;
+    --cargo-main: #a0aec0;
+    --fondo-foto: #2d3748;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +28,18 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.5;
-    color: #2d3748;
-    background-color: #f7fafc;
+    color: var(--texto-pagina);
+    background-color: var(--fondo-pagina);
     padding: 2rem 1rem;
     display: flex;
     align-items: flex-start;
     gap: 2rem;
+}
+
+body,
+header,
+main {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 li {
@@ -24,7 +51,7 @@ header {
     max-width: 25%;
     margin-bottom: 2rem;
     padding: 1.5rem 1rem 2rem;
-    background-color: #243429;
+    background-color: var(--fondo-header);
     color: #f7fafc;
     border-radius: 12px;
     text-align: center;
@@ -37,20 +64,21 @@ header ul {
 
 .avatar-container {
     display: flex;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
 
 .foto-perfil {
     display: block;
     width: 100%;
-    max-width: 200px;
+    max-width: 260px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border: 3px solid #805ad5;
     border-radius: 0 clamp(20px, 6vw, 60px) 0 0;
     cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: var(--fondo-foto);
 }
 
 .foto-perfil:hover {
@@ -92,7 +120,7 @@ main {
     flex: 1;
     min-width: 0;
     padding: 2rem 2.5rem 2.5rem;
-    background-color: #b9c4b2;
+    background-color: var(--fondo-main);
     border-radius: 12px;
     text-align: left;
     font-size: clamp(0.75rem, 1.5vw, 1rem);
@@ -104,8 +132,8 @@ main section {
 
 main h1 {
     font-size: clamp(1rem, 2.4vw, 2.5rem);
-    font-weight: 800;
-    color: #243429;
+    font-weight: 700;
+    color: var(--titulos-main);
     letter-spacing: -0.025em;
     margin-bottom: 0.25rem;
 }
@@ -113,7 +141,8 @@ main h1 {
 main .job-title {
     font-size: clamp(0.75rem, 1.6vw, 1.2rem);
     font-weight: 600;
-    color: #4a5568;
+    color: var(--cargo-main);
+    font-style: italic;
     margin-bottom: 1.5rem;
 }
 
@@ -124,13 +153,13 @@ main h2 {
 }
 
 .section-title {
-    color: #243429; 
+    color: var(--titulos-main);
 }
 
 main h3,
 main h4 {
     font-size: 1em;
-    color: #243429;
+    color: var(--titulos-main);
 }
 
 main p {
@@ -172,15 +201,42 @@ a:focus-visible {
     text-shadow: 0 4px 10px rgba(246, 173, 85, 0.4);
 }
 
+.btn-tema {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background-color: #243429;
+    color: #ffffff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-tema:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+body.dark-mode .btn-tema {
+    background-color: #b9c4b2;
+}
+
 @media (max-width: 640px) {
     body {
         padding: 1rem 0.5rem;
         gap: 0.75rem;
     }
-    header,
-    main {
+    header {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
+    }
+    main {
+        padding: 1.25rem 1rem 1.5rem;
     }
 }
 
