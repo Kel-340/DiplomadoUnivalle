@@ -66,20 +66,26 @@
         <main>
             <h1>Kelvin Jherman Nava Siñani</h1>
             <p class="job-title">Ingeniero de Sistemas</p>
-
-            <section id="professional-summary">
+            <nav class="tabs" role="tablist" aria-label="Secciones del CV">
+                <button class="tab-btn" type="button" role="tab" data-target="professional-summary">👤 Perfil profesional</button>
+                <button class="tab-btn" type="button" role="tab" data-target="experiencia">💼 Experiencia laboral</button>
+                <button class="tab-btn" type="button" role="tab" data-target="formacion">🎓 Formación académica</button>
+                <button class="tab-btn" type="button" role="tab" data-target="certificaciones">📜 Educación continua y certificaciones</button>
+            </nav>
+            <section id="professional-summary" class="panel" role="tabpanel">
                 <h2 class="section-title"><span>👤</span> Perfil profesional</h2>
                 <p>
-                    Ingeniero de Sistemas y Técnico Superior en Diseño Multimedia Web Máster, enfocado en
-                    desarrollo de software, análisis de sistemas y soluciones digitales. Experiencia en soporte
-                    técnico (DTIC), aseguramiento de infraestructura TI y optimización de sistemas en entornos
-                    públicos y académicos. Profesional proactivo con un perfil híbrido que combina la lógica de
-                    programación y el diseño visual para crear soluciones tecnológicas eficientes y centradas en
-                    el usuario.
+                    Ingeniero de Sistemas y Técnico Superior en Diseño Multimedia Web Máster, con enfoque en desarrollo de software, 
+                    análisis de sistemas, soporte técnico y gestión de soluciones TI. Experiencia en entornos públicos y académicos, 
+                    brindando soporte a usuarios, asegurando la continuidad de la infraestructura tecnológica y contribuyendo a la 
+                    optimización de sistemas y procesos.<br><br>
+                    Cuento con un perfil híbrido que integra programación, análisis tecnológico y diseño visual, permitiéndome desarrollar
+                    soluciones funcionales, eficientes y orientadas a las necesidades del usuario. Me caracterizo por la capacidad de
+                     aprendizaje, resolución de problemas, pensamiento analítico y adaptación a diferentes entornos tecnológicos.
                 </p>
             </section>
 
-            <section>
+            <section id="experiencia" class="panel" role="tabpanel">
                 <h2 class="section-title"><span>💼</span> Experiencia laboral</h2>
 
                 <article class="trabajo">
@@ -109,9 +115,20 @@
                         <li>Apoyo en la gestión de redes locales y aseguramiento del correcto funcionamiento de herramientas informáticas.</li>
                     </ul>
                 </article>
+
+                <article class="trabajo">
+                    <h3>Biocentro "La Candelaria"</h3>
+                    <p class="detalle">Atención al Cliente, Ventas y Soporte Técnico | 2021 - Presente</p>
+                    <ul class="lista-puntos">
+                        <li>Atención y orientación a clientes, brindando información sobre servicios, productos y requerimientos.</li>
+                        <li>Gestión de ventas y apoyo en el control y manejo de cuentas.</li>
+                        <li>Resolución de consultas e incidencias, procurando una atención eficiente y cordial.</li>
+                        <li>Soporte técnico a los equipos y servicios tecnológicos del establecimiento, incluyendo computadoras, conexión Wi-Fi y otros dispositivos.</li>
+                        <li>Gestión y actualización de redes sociales, incluyendo publicación de contenido e información relacionada con los servicios del establecimiento.</li>
+                    </ul>
             </section>
 
-            <section>
+            <section id="formacion" class="panel" role="tabpanel">
                 <h2 class="section-title"><span>🎓</span> Formación académica</h2>
 
                 <article class="trabajo">
@@ -125,7 +142,7 @@
                 </article>
             </section>
 
-            <section>
+            <section id="certificaciones" class="panel" role="tabpanel">
                 <h2 class="section-title"><span>📜</span> Educación continua y certificaciones</h2>
 
                 <article class="trabajo">

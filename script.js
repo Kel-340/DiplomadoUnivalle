@@ -26,3 +26,29 @@ const UI = {
 
 UI.inicializarTema();
 UI.btnTema.addEventListener("click", () => UI.alternarTema());
+
+const Pestañas = {
+    botones: document.querySelectorAll(".tab-btn"),
+    paneles: document.querySelectorAll(".panel"),
+
+    // Muestra el panel con ese id y oculta los demás
+    mostrar(id) {
+        this.paneles.forEach(panel => {
+            panel.hidden = panel.id !== id;
+        });
+        this.botones.forEach(btn => {
+            const activa = btn.dataset.target === id;
+            btn.classList.toggle("activa", activa);
+            btn.setAttribute("aria-selected", activa);
+        });
+    },
+
+    iniciar() {
+        this.botones.forEach(btn => {
+            btn.addEventListener("click", () => this.mostrar(btn.dataset.target));
+        });
+        this.mostrar(this.botones[0].dataset.target); // 0,1,2,3 acorde a la cantidad de pestañas
+    }
+};
+
+Pestañas.iniciar();
